@@ -5,10 +5,6 @@
 
 `#Javascript`
 
-https://dotnetfiddle.net/lAupgL
-
-Hallo
-
 Oplossing oef 5.9
 
 
@@ -33,4 +29,5 @@ public class Program
 	}
 }
 ```
+https://dotnetfiddle.net/gBs2lL
 
