@@ -53,7 +53,6 @@ https://dotnetfiddle.net/gBs2lL
 		}
 	}
 	```
-	
 https://dotnetfiddle.net/kgCPlE
 
 - Oplossing oef 6.8
