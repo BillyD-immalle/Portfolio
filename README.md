@@ -1,6 +1,10 @@
 # Portfolio
+===========
 
-`#CSharp`
+##CSharp
+
+
+###Oefeningen
   
 - Oplossing oef 5.9
 
@@ -114,7 +118,5 @@ https://dotnetfiddle.net/kgCPlE
             timer.Interval = TimeSpan.FromMilliseconds(ms);
             timer.Start();
         }
-    }
-}
-```
+	```
 
