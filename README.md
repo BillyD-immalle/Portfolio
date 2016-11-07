@@ -9,7 +9,7 @@
 - Oplossing oef 5.9
 
 
-	```
+	```C#
 	using System;
 					
 	public class Program
@@ -33,7 +33,7 @@ https://dotnetfiddle.net/gBs2lL
 - Oplossing oef 5.10
 
 
-	```
+	```C#
 	using System;
 					
 	public class Program
@@ -57,7 +57,7 @@ https://dotnetfiddle.net/kgCPlE
 
 - Oplossing oef 6.8
 
-	```
+	```C#
 	public partial class MainWindow : Window
     	{
             private Random randomNumber = new Random();
