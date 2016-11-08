@@ -9,7 +9,7 @@
 - Oplossing oef 5.9
 
 
-	```C#
+```C#
 	using System;
 					
 	public class Program
@@ -33,7 +33,7 @@ https://dotnetfiddle.net/gBs2lL
 - Oplossing oef 5.10
 
 
-	```C#
+```C#
 	using System;
 					
 	public class Program
@@ -57,7 +57,7 @@ https://dotnetfiddle.net/kgCPlE
 
 - Oplossing oef 6.8
 
-	```C#
+```C#
 	public partial class MainWindow : Window
     	{
             private Random randomNumber = new Random();
@@ -121,7 +121,7 @@ https://dotnetfiddle.net/kgCPlE
 
 ###Projectjes
 - Refactoring van een CookcieClicker van MichielVE
-	```C#
+```C#
 	public partial class MainWindow : Window
     {
         long aantKliks = 0;
@@ -156,4 +156,5 @@ https://dotnetfiddle.net/kgCPlE
             { 
                     aantKliks = aantKliks + 50;
                     teller.Text = String.Format("{0}", aantKliks);
-            }```
+            }
+	    ```
