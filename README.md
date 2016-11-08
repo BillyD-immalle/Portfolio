@@ -55,6 +55,39 @@ public static void Main(){
 ```
 https://dotnetfiddle.net/kgCPlE
 
+-Oplossing oef 6.7
+
+```C#
+public partial class MainWindow : Window
+{
+private Random ageGuesser = new Random();
+private int tries = 0;
+
+public MainWindow()
+{
+    InitializeComponent();
+
+    label1.Content = Convert.ToString(ageGuesser.Next(5, 110));
+
+}
+
+private void button_Click(object sender, RoutedEventArgs e)
+{
+    tries = tries + 1;
+    MessageBox.Show("Number of tries was " + tries);
+    tries = 0;
+    label1.Content = Convert.ToString(ageGuesser.Next(5, 110));
+}
+
+private void button1_Click(object sender, RoutedEventArgs e)
+{
+    label1.Content = Convert.ToString(ageGuesser.Next(5, 110));
+    tries = tries + 1;
+}
+}
+}
+```
+
 - Oplossing oef 6.8
 
 ```C#
