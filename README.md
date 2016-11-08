@@ -119,3 +119,42 @@ https://dotnetfiddle.net/kgCPlE
         }
 	```
 
+###Projectjes
+- Refactoring van een CookcieClicker van MichielVE
+	```C#
+	public partial class MainWindow : Window
+    {
+        long aantKliks = 0;
+
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+
+        private void Coockie_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Coockie.Fill = new SolidColorBrush(Colors.SaddleBrown);
+            Coockie.StrokeThickness = 4;
+            Coockie.Stroke = new SolidColorBrush(Colors.Black);
+        }
+
+        private void Coockie_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Coockie.Fill = new SolidColorBrush(Colors.Gray);
+            Coockie.StrokeThickness = 2;
+            Coockie.Stroke = new SolidColorBrush(Colors.Black);
+        }
+
+        private void Coockie_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (aantKliks < 100)
+            {
+                aantKliks++;
+                teller.Text = String.Format("{0}", aantKliks);
+            }
+            else 
+            { 
+                    aantKliks = aantKliks + 50;
+                    teller.Text = String.Format("{0}", aantKliks);
+            }
+	    ```
