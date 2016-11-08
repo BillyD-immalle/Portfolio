@@ -158,4 +158,4 @@ private void Coockie_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
 	    aantKliks = aantKliks + 50;
 	    teller.Text = String.Format("{0}", aantKliks);
     }
-    ```
+```
