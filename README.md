@@ -156,5 +156,4 @@ https://dotnetfiddle.net/kgCPlE
             { 
                     aantKliks = aantKliks + 50;
                     teller.Text = String.Format("{0}", aantKliks);
-            }
-	    ```
+            }```
