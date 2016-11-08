@@ -121,6 +121,7 @@ https://dotnetfiddle.net/kgCPlE
 
 ###Projectjes
 - Refactoring van een CookcieClicker van MichielVE
+
 ```C#
 	public partial class MainWindow : Window
     {
