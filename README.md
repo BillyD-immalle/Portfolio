@@ -156,49 +156,49 @@ private void timer_Tick(object sender, EventArgs e)
 - Refactoring van een CookcieClicker van MichielVE
 
 ```C#
-public partial class MainWindow : Window
-{
-long aantKliks = 0;
+	public partial class MainWindow : Window
+	{
+	long aantKliks = 0;
 
-public MainWindow()
-{
-    InitializeComponent();
-}
+	public MainWindow()
+	{
+	InitializeComponent();
+	}
 
-private void Coockie_MouseEnter(object sender, MouseEventArgs e)
-{
-    Coockie.Fill = new SolidColorBrush(Colors.SaddleBrown);
-    Coockie.StrokeThickness = 4;
-    Coockie.Stroke = new SolidColorBrush(Colors.Black);
-}
+	private void Coockie_MouseEnter(object sender, MouseEventArgs e)
+	{
+	Coockie.Fill = new SolidColorBrush(Colors.SaddleBrown);
+	Coockie.StrokeThickness = 4;
+	Coockie.Stroke = new SolidColorBrush(Colors.Black);
+	}
 
-private void Coockie_MouseLeave(object sender, MouseEventArgs e)
-{
-    Coockie.Fill = new SolidColorBrush(Colors.Gray);
-    Coockie.StrokeThickness = 2;
-    Coockie.Stroke = new SolidColorBrush(Colors.Black);
-}
+	private void Coockie_MouseLeave(object sender, MouseEventArgs e)
+	{
+	Coockie.Fill = new SolidColorBrush(Colors.Gray);
+	Coockie.StrokeThickness = 2;
+	Coockie.Stroke = new SolidColorBrush(Colors.Black);
+	}
 
-private void Coockie_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-{
-    if (aantKliks < 100)
-    {
+	private void Coockie_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+	{
+	if (aantKliks < 100)
+	{
 	aantKliks++;
 	teller.Text = String.Format("{0}", aantKliks);
-    }
-    else 
-    { 
+	}
+	else 
+	{ 
 	    aantKliks = aantKliks + 50;
 	    teller.Text = String.Format("{0}", aantKliks);
-    }
+	}
 ```
 
 ###Extra oefeningen
 
 - Hoger/lager spelletje
 ```C#
-public static void Main(string[] args)
-{
+	public static void Main(string[] args)
+	{
 	Console.Clear();
 	Random rndGen = new Random();
 	int g = rndGen.Next(0, 100);
@@ -234,5 +234,48 @@ public static void Main(string[] args)
 
 	    aantBeurten++;
 	}
-}
+	}
 ```
+- Weekloon berekenen met een extra % bij over uren 
+```C#
+	public static void Main(string[] args)
+	{
+	Console.WriteLine("Weekloon");
+	Console.WriteLine(BerekenWeekloon(14.00, 45));
+	Console.WriteLine(BerekenWeekloon(14.00, 25));
+	}
+	public static double BerekenWeekloon(double uurloon, double aantalUurGewerkt)
+	{
+	double totaalLoon = uurloon * aantalUurGewerkt;
+
+	if (aantalUurGewerkt > 38)
+	{
+	double overUur = aantalUurGewerkt - 38;
+	totaalLoon = (38 * uurloon) + (overUur * uurloon * 1.35);
+	}
+	return totaalLoon;
+	}
+```
+- Verkooprijs berekenen met kortings percentages
+```C#
+	public static void Main(string[] args)
+	{
+	Console.WriteLine("VerkoopPrijs");
+	Console.WriteLine(BerekenVerkoopprijs(36));
+	Console.WriteLine(BerekenVerkoopprijs(48));
+	Console.WriteLine(BerekenVerkoopprijs(85));
+	}
+	public static double BerekenVerkoopprijs(double inkoopprijs)
+	{
+	double verkoopPrijs = inkoopprijs * 2;
+
+	if (verkoopPrijs > 80)
+	{
+	verkoopPrijs = verkoopPrijs - (verkoopPrijs * 0.30);
+	}
+	else if (verkoopPrijs > 40)
+	{
+	verkoopPrijs = verkoopPrijs - (verkoopPrijs * 0.20);
+	}
+	return verkoopPrijs;
+	}
