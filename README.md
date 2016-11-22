@@ -194,3 +194,45 @@ private void Coockie_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
 ```
 
 ###Extra oefeningen
+
+- Hoger/lager spelletje
+```C#
+public static void Main(string[] args)
+{
+	Console.Clear();
+	Random rndGen = new Random();
+	int g = rndGen.Next(0, 100);
+	int gok = 100;
+	int aantBeurten = 0;
+
+
+	while (gok != g)
+	{
+	Console.WriteLine("Raad het getal:");
+	string input = Console.ReadLine();
+	if (gok == g)
+	{
+	    break;
+	    Console.WriteLine("Doei");
+	}
+	gok = Convert.ToInt32(input);
+
+	if (gok < g)
+	{
+	    Console.WriteLine("Hoger");
+
+	    aantBeurten++;
+	}
+	else if (gok == g)
+	{   
+	    Console.WriteLine("Goedzo");
+	    Console.WriteLine("Je deed er {0} beurten over.", aantBeurten);
+	}
+	else
+	{
+	    Console.WriteLine("Lager");
+
+	    aantBeurten++;
+	}
+}
+```
