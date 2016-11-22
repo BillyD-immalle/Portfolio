@@ -4,7 +4,7 @@
 ##CSharp
 
 
-###Oefeningen
+###Oefeningen uit het handboek 
   
 - Oplossing oef 5.9
 
@@ -192,3 +192,5 @@ private void Coockie_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
 	    teller.Text = String.Format("{0}", aantKliks);
     }
 ```
+
+###Extra oefeningen
