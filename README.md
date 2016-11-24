@@ -279,3 +279,46 @@ private void timer_Tick(object sender, EventArgs e)
 	}
 	return verkoopPrijs;
 	}
+```
+- De kortste en langste lengte zoeken tussen verschillenden waarden
+```C#
+        public static double KortsteLengte(double lengteA, double lengteB, double lengteC)
+        {
+
+            double kortsteLengte = lengteA;
+
+            if (lengteA < lengteB && lengteA < lengteC)
+            {
+                kortsteLengte = lengteA;
+            }
+            else if (lengteB < lengteA && lengteB < lengteC)
+            {
+                kortsteLengte = lengteB;
+            }
+            else
+            {
+                kortsteLengte = lengteC;
+            }
+            return kortsteLengte;
+        }
+
+        public static double LangsteLengte(double lengteA, double lengteB, double lengteC)
+        {
+            double langsteLengte = lengteA;
+
+            if (lengteA > lengteB && lengteA > lengteC)
+            {
+                langsteLengte = lengteA;
+            }
+            else if (lengteB > lengteA && lengteB > lengteC)
+            {
+                langsteLengte = lengteB;
+            }
+            else
+            {
+                langsteLengte = lengteC;
+            }
+            return langsteLengte;
+        }
+```
+
