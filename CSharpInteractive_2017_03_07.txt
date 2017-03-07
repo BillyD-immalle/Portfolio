@@ -1,0 +1,12 @@
+> var x = 3;
+> x
+3
+> string x;
+> x = "België";
+> x
+"België"
+> x = String.Empty;
+> x
+""
+> char initial = 'M';
+> 
