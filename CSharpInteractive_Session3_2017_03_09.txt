@@ -1,0 +1,188 @@
+Microsoft (R) Roslyn C# Compiler version 1.3.3.60707
+Loading context from 'CSharpInteractive.rsp'.
+Type "#help" for more information.
+> Environment.CurrentDirectory;
+(1,1): error CS0201: Only assignment, call, increment, decrement, and new object expressions can be used as a statement
+> Environment.GetFolderPath(Environment.SpecialFolder);
+(1,27): error CS0119: 'Environment.SpecialFolder' is a type, which is not valid in the given context
+> Environment.GetFolderPath(Environment.SpecialFolder);
+(1,27): error CS0119: 'Environment.SpecialFolder' is a type, which is not valid in the given context
+> Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+> Environment.GetFolderPath(Environment.SpecialFolder.Software);
+(1,53): error CS0117: 'Environment.SpecialFolder' does not contain a definition for 'Software'
+> Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+"\\\\imma-fs-0003\\billy.dhoore$\\documents"
+> Directory.GetFiles(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments))
+string[2] { "\\\\imma-fs-0003\\billy.dhoore$\\documents\\desktop.ini", "\\\\imma-fs-0003\\billy.dhoore$\\documents\\Thumbs.db" }
+> string[] mijnfiles = { "a", "b", "c" };
+> mijnfiles
+string[3] { "a", "b", "c" }
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> int[] mijnfiles = { 1, 2, 20, 4, 5 };
+> mijnfiles
+int[5] { 1, 2, 20, 4, 5 }
+> string[] mijnfilesxoxo = { "a", "b", "c" };
+> int[] getallen = new int[5];
+. getallen[2] = 20;
+. Person[] = new Person[7];
+(3,10): error CS1519: Invalid token '=' in class, struct, or interface member declaration
+(3,10): error CS1525: Invalid expression term '='
+> class Person
+. {
+.     public string Voornaam { get; set; }
+.     public string Naam { get; set; }
+.     public int Leeftijd { get; set; }
+. }
+> int[] getallen = new int[5];
+. getallen[2] = 20;
+. Person[] = new Person[7];
+(3,10): error CS1519: Invalid token '=' in class, struct, or interface member declaration
+(3,10): error CS1525: Invalid expression term '='
+> int[] getallen = new int[5];
+. getallen[2] = 20;
+. Person[] persoon = new Person[7];
+> int[] getallen = new int[5];
+. getallen[2] = 20;
+. Person[] personen = new Person[7];
+> int[] getallen = new int[5];
+. Console.WriteLine(getallen[0]);
+0
+> int[] getallen = new int[5];
+. Console.WriteLine(getallen[0]);
+. Console.WriteLine(getallen[1]);
+. Console.WriteLine(getallen[5]);
+0
+0
+De index ligt buiten de matrixgrenzen.
+> int[] getallen = new int[5];
+. getallen[0]
+. getallen[1]
+. getallen[5]
+(2,12): error CS1002: ; expected
+(3,12): error CS1002: ; expected
+> int[] getallen = new int[5];
+. getallen[0]
+. 
+0
+> getallen[5]
+De index ligt buiten de matrixgrenzen.
+> var i = getallen.Sum;
+(1,5): error CS0815: Cannot assign method group to an implicitly-typed variable
+> var i = getallen.Sum;
+(1,5): error CS0815: Cannot assign method group to an implicitly-typed variable
+> i
+(1,1): error CS0103: The name 'i' does not exist in the current context
+> var som = 0;
+> for (var i = 0; i < getallen.Length; i++) { som++ }
+(1,51): error CS1002: ; expected
+> for (var i = 0; i < getallen.Length; i++) { som++ };
+(1,51): error CS1002: ; expected
+> for (var i = 0; i < getallen.Length; i++) { som++; }
+> som
+5
+> for (var i = 0; i < getallen.Length; i++) { som += getallen[i]; }
+> som
+5
+> for (var i = 0; i < getallen.Length; i++) { som += getallen[i]; return som; }
+5
+> for (var i = 0; i < getallen.Length; i++) { som += getallen[i]; }
+> getallen
+int[5] { 0, 0, 0, 0, 0 }
+> som
+5
+> som = 0
+0
+> getallen
+int[5] { 0, 0, 0, 0, 0 }
+> getallen[1] = 12
+12
+> getallen
+int[5] { 0, 12, 0, 0, 0 }
+> getallen[4] = 34
+34
+> getallen
+int[5] { 0, 12, 0, 0, 34 }
+> som
+0
+> for (var i = 0; i < getallen.Length; i++) { som += getallen[i]; }
+> som
+46
+> som
+46
+> getallen
+int[5] { 0, 12, 0, 0, 34 }
+> var getallen = new int[5]
+.     m
+(1,26): error CS1002: ; expected
+> var getallen = new int[5];
+> getallen
+int[5] { 0, 0, 0, 0, 0 }
+> getallen[4] = 34
+34
+> getallenµ
+(1,1): error CS0103: The name 'getallenµ' does not exist in the current context
+> getallen
+int[5] { 0, 0, 0, 0, 34 }
+> for (var i = 0; i < getallen.Length; i++) { som += getallen[i]; }
+> som
+80
+> for (var i = 0; i < getallen.Length; i++) { som += getallen[i]; }
+> som
+114
+> for (var i = 0; i < getallen.Length; i++) { som += getallen[i]; }
+> 
+> som
+148
+> for (var i = 0; i < getallen.Length; i++) { som += getallen[i]; }
+> som
+182
+> void BerekenDeSom(int[] getallen)
+. {
+.     int som = 0;
+.     foreach (int getal in getallen)
+.     {
+.         som += getal;
+.     }
+.     Console.WriteLine("De som van " + getallen + " is " + som);
+. }
+> som
+182
+> som = 0
+0
+> string m = "jan;boon;20";
+> m.IndexOf(";");
+> m
+"jan;boon;20"
+> var d = m.IndexOf(";");
+> d
+3
+> m.Substring(4, 8);
+Index en lengte moeten naar een locatie binnen de tekenreeks verwijzen.
+Parameternaam: length
+  + string.Substring(int, int)
+> m.Substring(4, 5);
+> m
+"jan;boon;20"
+> m.Insert(4, "ajjajaj");
+> m
+"jan;boon;20"
+> m.Split;
+(1,1): error CS0201: Only assignment, call, increment, decrement, and new object expressions can be used as a statement
+> m.Split();
+> m
+"jan;boon;20"
+> var b = m.Split();
+> b
+string[1] { "jan;boon;20" }
+> var b = m.Split(";");
+(1,17): error CS1503: Argument 1: cannot convert from 'string' to 'char'
+> var b = m.Split(';');
+> b
+string[3] { "jan", "boon", "20" }
+> 
