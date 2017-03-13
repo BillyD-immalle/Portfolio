@@ -1,0 +1,125 @@
+Microsoft (R) Roslyn C# Compiler version 1.3.3.60707
+Loading context from 'CSharpInteractive.rsp'.
+Type "#help" for more information.
+> hallo
+(1,1): error CS0103: The name 'hallo' does not exist in the current context
+> var Welkom = "hallo";
+> Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+> Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+"\\\\imma-fs-0003\\billy.dhoore$\\documents"
+> Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+"\\\\imma-fs-0003\\billy.dhoore$\\documents"
+> var deCsvFile = Path.Combine("\\\\imma-fs-0003\\billy.dhoore$\\documents", "Geboortedata.csv");
+> deCsvFile
+"\\\\imma-fs-0003\\billy.dhoore$\\documents\\Geboortedata.csv"
+> var paden = new string[3];
+> paden
+string[3] { null, null, null }
+> paden[0] = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+> paden[1] = "submap";
+> paden[2] = "bla.txt";
+> var deCsvFile = Path.Combine(paden);
+> deCsvFile
+"\\\\imma-fs-0003\\billy.dhoore$\\documents\\submap\\bla.txt"
+> var deCsvFile = Path.Combine("\\\\imma-fs-0003\\billy.dhoore$\\documents", "Geboortedata.csv");
+> deCsvFile
+"\\\\imma-fs-0003\\billy.dhoore$\\documents\\Geboortedata.csv"
+> deCsvFile.GetType()
+[System.String]
+> var g = enum Geslacht { Man, Vrouw };
+(1,9): error CS1525: Invalid expression term 'enum'
+(1,9): error CS1002: ; expected
+> enum Geslacht { Man, Vrouw };
+> var g = Gelslacht;
+(1,9): error CS0103: The name 'Gelslacht' does not exist in the current context
+> var g = Geslacht;
+(1,9): error CS0119: 'Geslacht' is a type, which is not valid in the given context
+> enum Geslacht { Man, Vrouw };
+> Geslacht g = Geslacht.Man;
+> g
+Man
+> 69
+69
+> string fileInhoud = File.ReadAllText(deCsvFile);
+> fileInhoud
+"voornaam;achternaam;geboortedatum\r\nJos;Janssens;1990-01-02\r\nJef;Janssens;1991-02-03\r\nMieke;Janssens;1992-03-04"
+> string[] lijnen = File.ReadAllLines(deCsvFile);
+> lijnen
+string[4] { "voornaam;achternaam;geboortedatum", "Jos;Janssens;1990-01-02", "Jef;Janssens;1991-02-03", "Mieke;Janssens;1992-03-04" }
+> lijnen[0]
+"voornaam;achternaam;geboortedatum"
+> lijnen[3]
+"Mieke;Janssens;1992-03-04"
+> class Persoon
+. {
+.     public string Voornaam { get; set; }
+.     public string Achternaam { get; set; }
+.     public DateTime GeboorteDatum { get; set; }
+. }
+> Persoon
+(1,1): error CS0119: 'Persoon' is a type, which is not valid in the given context
+> Persoon x;
+> Persoon y = new Persoon();
+> x
+null
+> 
+> y
+Submission#30.Persoon { Achternaam=null, GeboorteDatum=[1/01/0001 0:00:00], Voornaam=null }
+> x = y
+Submission#30.Persoon { Achternaam=null, GeboorteDatum=[1/01/0001 0:00:00], Voornaam=null }
+> x.Voornaam = "Anneke"
+"Anneke"
+> x
+Submission#30.Persoon { Achternaam=null, GeboorteDatum=[1/01/0001 0:00:00], Voornaam="Anneke" }
+> y
+Submission#30.Persoon { Achternaam=null, GeboorteDatum=[1/01/0001 0:00:00], Voornaam="Anneke" }
+> Persoon z = new Persoon();
+> z.Voornaam = "Willyke"
+"Willyke"
+> z.GeboorteDatum = new DateTime(1990, 8, 1)
+[1/08/1990 0:00:00]
+> z
+Submission#30.Persoon { Achternaam=null, GeboorteDatum=[1/08/1990 0:00:00], Voornaam="Willyke" }
+> x == z
+false
+> Persoon q = new Persoon();
+> q.Voornaam = "Anneke";
+> q == x
+false
+> DateTime tijdstip1 = new DateTime(1990, 1, 1);
+> DateTime tijdstip2;
+> tijdstip1
+[1/01/1990 0:00:00]
+> tijdstip2
+[1/01/0001 0:00:00]
+> tijdstip2 = tijdstip1;
+> tijdstip2.AddYears(3);
+> tijdstip2
+[1/01/1990 0:00:00]
+> var myBirthday = new DateTime(2000, 07, 18);
+> myBirthday
+[18/07/2000 0:00:00]
+> myBirthday.DayOfWeek
+Tuesday
+> var myBirthday2017 = new DateTime(2017, 07, 18);
+> myBirthday2017.DayOfWeek
+Tuesday
+> myBirthday.Second
+0
+> var lengte = DateTime.Now - myBirthday;
+> lengte
+[6082.11:50:53.9808811]
+> lengte.Seconds
+53
+> lengte.GetType()
+[System.TimeSpan]
+> lengte.TotalSeconds
+525527453,98088109
+> TimeSpan ts = new TimeSpan(2, 2, 0, 10);
+> ts
+[2.02:00:10]
+> "Tot morgen" + y.Voornaam + y.Achternaam
+"Tot morgenAnneke"
+> "Tot morgen " + y.Voornaam + y.Achternaam
+"Tot morgen Anneke"
+> 
